@@ -301,10 +301,10 @@
         .search-filter-section {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 40px;
             flex-wrap: wrap;
             gap: 16px;
-            align-items: center;
             padding: 16px;
             background: var(--card-bg);
             border-radius: 12px;
@@ -357,6 +357,12 @@
 
         .search-box:hover .search-icon {
             color: var(--secondary);
+        }
+
+        .filter-add-container {
+            display: flex;
+            gap: 8px;
+            align-items: center;
         }
 
         .filter-dropdown {
@@ -833,9 +839,14 @@
                 margin-bottom: 16px;
             }
 
+            .filter-add-container {
+                width: 100%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
             .filter-dropdown, .add-user-btn {
                 width: 100%;
-                margin-bottom: 16px;
             }
 
             .user-grid {
@@ -917,20 +928,22 @@
                     <i class="fas fa-search search-icon"></i>
                     <input type="text" id="search-input" placeholder="Search users by name or email...">
                 </div>
-                <div class="filter-dropdown">
-                    <button class="filter-btn">
-                        <span>All Users</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div id="filter-content" class="filter-content">
-                        <a href="#" data-filter="all" class="active">All Users</a>
-                        <a href="#" data-filter="active">Active Users</a>
-                        <a href="#" data-filter="inactive">Inactive Users</a>
+                <div class="filter-add-container">
+                    <div class="filter-dropdown">
+                        <button class="filter-btn">
+                            <span>All Users</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="filter-content" class="filter-content">
+                            <a href="#" data-filter="all" class="active">All Users</a>
+                            <a href="#" data-filter="active">Active Users</a>
+                            <a href="#" data-filter="inactive">Inactive Users</a>
+                        </div>
                     </div>
+                    <button id="add-user-btn" class="add-user-btn">
+                        <i class="fas fa-user-plus"></i> Add User
+                    </button>
                 </div>
-                <button id="add-user-btn" class="add-user-btn">
-                    <i class="fas fa-user-plus"></i> Add User
-                </button>
             </div>
 
             <div id="user-grid" class="user-grid">
